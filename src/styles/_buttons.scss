@@ -6,10 +6,10 @@ button {
 }
 
 @mixin btn-main {
+    font-family: 'TitilliumWeb-SemiBold', sans-serif;
     @extend %reset-default-styles;
     @include font-size(16, 16);
     @include animate(transform);
-    font-weight: 600;
     padding: 16px 32px;
     background-color: $c-green;
     border-radius: 35px;
