@@ -1,0 +1,27 @@
+button {
+    &:focus {
+        outline: 1px dotted $c-primary;
+        outline-offset: 2px;
+    }
+}
+
+@mixin btn-main {
+    @extend %reset-default-styles;
+    @include font-size(16, 16);
+    @include animate(transform);
+    font-weight: 600;
+    padding: 16px 32px;
+    background-color: $c-green;
+    border-radius: 35px;
+    color: $c-white;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+       transform: scale(1.2)
+    }
+}
+
+.btn-main {
+    @include btn-main;
+}

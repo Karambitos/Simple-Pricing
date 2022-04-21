@@ -1,0 +1,116 @@
+/**
+ *  «Respond to» mixin
+ *
+ *  Mixin to manage responsive breakpoints
+ *  @param {String} $breakpoint - Breakpoint name
+ *  @author Hugo Giraudel
+ *
+ *  @require $breakpoints
+ */
+@mixin phone {
+    @media (min-width: 320px) and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin full-width {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
+
+/*
+  This mixin can be used to set the font-size and line-height in percents:
+  @include font-size(fontSize, lineHeight);
+*/
+@mixin font-size($fontSize, $lineHeight) {
+    font-size: ($fontSize / 16) + rem;
+    line-height: ($lineHeight / $fontSize);
+}
+/*
+  This mixin can be used to set the animate:
+  @include animate(color width);
+*/
+
+@mixin animate($properties, $duration: 0.3s, $easing: ease-in-out) {
+    $list: ();
+
+    @each $prop in $properties {
+        $str: #{$prop} #{$duration} #{$easing};
+        $list: join($list, #{$str}, comma);
+    }
+
+    transition: $list;
+}
+
+/**
+ *  Placeholder
+ *
+ *  Usage: append to input fields
+ */
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root("::-webkit-input-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-moz-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root("::-moz-placeholder") {
+        @content;
+    }
+    @include optional-at-root("::placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-ms-input-placeholder") {
+        @content;
+    }
+}
+// HELPERS
+
+// list reset
+%listreset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.listreset {
+    @extend %listreset;
+}
+
+%reset-default-styles {
+    appearance: none;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

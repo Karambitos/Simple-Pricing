@@ -1,7 +1,13 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter.ttf');
-}
+@import "vendors/normalize";
+@import "libs/swiper";
 
-@import 'variables';
-@import 'scaffolding';
+@import "mixins";
+@import "vars";
+@import "fonts";
+@import "styleguide";
+@import "global";
+@import "buttons";
+
+@import "blocks/logo_slider";
+@import "blocks/blockquote";
+@import "blocks/cta";

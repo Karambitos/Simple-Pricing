@@ -1,0 +1,224 @@
+.cta{
+    padding: 80px 0;
+    @include laptop{
+        padding: 140px 0;
+    }
+
+    &__info{
+        margin-bottom: 44px;
+
+        @include laptop{
+            margin-bottom: 64px;
+        }
+
+        &-title{
+            display: inline-block;
+            position: relative;
+
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100vw;
+                height: 1px;
+                background: $c-blue-3;
+                top: -60px;
+                right: 0;
+            }
+
+            @include laptop{
+                &::before{
+                    top: -100px;
+                }
+            }
+        }
+    }
+    &__row{
+        padding-top: 60px;
+
+        @include laptop{
+            padding-top: 100px;
+            display: flex;
+        }
+    }
+    &__col{
+        
+    }
+    &__content{
+        margin-bottom: 48px;
+        @include laptop{
+            width: 40%;
+            max-width: 463px;
+            margin-right: 32px;
+            margin-bottom: 0;
+        }
+    }
+    &__product-plan{
+       @include laptop{
+            width: 60%;
+       }
+
+        .product-plan__row {
+
+            @include tablet{
+                display: flex;
+                padding-top: 5px;
+                width: calc(100% + 14px);
+            }
+        }
+    }
+    &__card{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 48px 20px;
+        background: $c-white;
+        color: $c-black;
+
+        @include tablet{
+            width: calc((100% / 2) - 14px);
+            margin-right: 15px;
+        }
+
+        &:last-child{
+            margin-top: 8px;
+            background: $c-primary;
+
+            @include tablet{
+                margin-top: 0;
+            }
+
+            .cta__card-title,
+            .cta__card-price {
+                color: $c-white;
+            }
+
+            .cta__card-period,
+            .cta__card-trial {
+                color: $c-text-white;
+            }
+        }
+
+       &-logo{
+            height: 56px;
+           margin-bottom: 8px;
+           img{
+               height: 100%;
+           }
+       }
+       &-title{
+           margin-bottom: 40px;
+       }
+
+       &-price{
+            display: flex;
+            margin: auto;
+            position: relative;
+            padding-left: 3px;
+            @include font-size(88, 88);
+
+            @include laptop{
+                padding-left: 12px;
+                @include font-size(96, 96);
+            }
+           
+            &:before {
+                content: '$';
+                font-size: 20px;
+                position: absolute;
+                display: block;
+                top: 17px;
+                left: -12px;
+
+                @include laptop {
+                    left: 0;
+                }
+            }
+       }
+
+        &-title,
+        &-price {
+            color: $c-text-dark;
+        }
+
+       &-period{
+            padding-left: 7px;
+            margin-bottom: 40px;
+            @include laptop {
+                padding-left: 14px;
+            }
+       }
+
+        &-period,
+        &-trial{
+            @include font-size(14, 14);
+            color: $c-text-light;
+        }
+
+       .btn-main{
+            display: flex;
+            margin: 0 auto 8px;
+       }
+    }
+
+    .swiper{
+        &-pagination{
+            position: static;
+            text-align: start;
+            display: flex;
+            flex-direction: row;
+            margin-top: 24px;
+        }
+
+        &-pagination-bullet{
+            @include animate (border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            position: relative;
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+            background: transparent;
+            
+            border: 1px solid $c-blue-2;
+            box-sizing: border-box;
+            border-radius: 100px;
+
+            &:not(:last-child){
+                margin-right: 4px;
+            }
+
+            &::before {
+                @include animate (background);
+                content: '';
+                display: block;
+                background: transparent;
+                width: 6px;
+                height: 6px;
+                border-radius: 6px;
+                top: 6px;
+                left: 6px;
+            }
+
+            &:hover,
+            &:focus{
+                border-color: $c-primary;
+                &::before {
+                    background: $c-primary;
+                }
+            }
+        }
+
+
+        
+        &-pagination-bullet-active{
+            border-color: $c-primary;
+
+            &::before {
+                background: $c-primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.blockquote{
+
+    &-wrapper{
+        margin: 0;
+
+        blockquote {
+            margin: 0;
+        
+            p {
+                @include font-size(16, 24);
+                padding: 0;
+            }
+
+            *:last-child{
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &-autor{
+        display: flex;
+
+        img{
+            display: block;
+        }
+        .object-fit-image{
+            width: 32px;
+            padding-top: 32px;
+            border-radius: 32px;
+            background: $c-blue-1;
+        }
+
+        figcaption{
+            display: flex;
+            align-items: center;
+            @include font-size(14, 21);
+        }
+
+        .object-fit-image + figcaption{
+            position: relative;
+            padding-left: 16px;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 0px;
+                display: block;
+                border: 1px solid $c-green;
+                top: 50%;
+                left: 4px;
+            }
+        }
+    }
+}

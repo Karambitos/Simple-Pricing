@@ -1,0 +1,53 @@
+// Typography Start
+h1,
+.title-1,
+h2,
+.title-2,
+h3,
+.title-3,
+h4,
+.title-4,
+h5,
+.title-5 {
+    color: $c-primary;
+    margin: 0 0 16px;
+}
+
+h1,
+.title-1 {
+    font-weight: 400;
+    @include font-size(48, 55);
+    
+    @include laptop {
+        @include font-size(60, 69);
+    }
+}
+h2,
+.title-2 {
+    font-weight: 400;
+    @include font-size(48, 55);
+    
+    @include laptop {
+        @include font-size(60, 69);
+    }
+}
+
+h3,
+.title-3 {
+    @include font-size(40, 45);
+    
+    @include laptop {
+        @include font-size(50, 55);
+    }
+}
+
+h4,
+.title-4 {
+    @include font-size(30, 35);
+    
+    @include laptop {
+        @include font-size(35, 40);
+    }
+}
+
+
