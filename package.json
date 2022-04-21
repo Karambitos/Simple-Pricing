@@ -5,7 +5,9 @@
   "main": "index.js",
   "author": "Dmytro Pasichnyk",
   "license": "MIT",
+  "homepage": "https://karambitos.github.io/Simple-Pricing",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint 'src/**/*.js' || true",
@@ -48,6 +50,7 @@
     "url": "git@github.com:taniarascia/webpack-boilerplate"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "swiper": "^8.1.3"
   }
 }
